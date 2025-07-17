@@ -333,6 +333,10 @@ body.light-theme .grid-item a {
     flex-direction:column;
     gap:10px;
 }
+body.dark-theme .grid-item a {
+    color: #f2f6fa;
+    font-weight: 700;
+}
 
 
 /* Responsive Design */
@@ -390,6 +394,10 @@ body.light-theme .grid-item a {
     .main-heading {
     margin-top: 40px;
     font-size: 2.5rem;
+   }
+    body.dark-theme .grid-item a {
+    color: #f2f6fa;
+    font-weight: 700;
    }
 
     
