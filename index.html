@@ -43,13 +43,31 @@
                 <h2 class="hi">मस्टर रोल</h2>
             </div>
             
-            <!-- Section 3: Attendance -->
+            <!-- Section 3: Attendance --
             <div class="grid-item" onclick="window.open('https://mnregaweb4.nic.in/nregaarch/View_NMMS_atten_date_new.aspx?fin_year=2024-2025&Digest=HNrisV4bhHnb7Gve3mAKYQ', '_blank')">
                 <img src="jobcard3.jpg" >
                 <h2 class="en">ATTENDANCE</h2>
                 <h2 class="te">హాజరు</h2>
                 <h2 class="hi">उपस्थिति</h2>
-            </div>
+            </div>-->
+            <!-- Section 3: Attendance (Password Protected) -->
+<div class="grid-item" id="attendance-section">
+    <img src="jobcard3.jpg">
+    <h2 class="en">ATTENDANCE</h2>
+    <h2 class="te">హాజరు</h2>
+    <h2 class="hi">उपस्थिति</h2>
+    <div id="attendanceModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="en">Enter Password</h3>
+            <h3 class="te">పాస్వర్డ్ నమోదు చేయండి</h3>
+            <h3 class="hi">पासवर्ड दर्ज करें</h3>
+            <input type="password" id="attendancePassword" placeholder="Password">
+            <button id="checkPassword" class="btn">Submit</button>
+            <p id="passwordError" style="color:red;display:none;"></p>
+        </div>
+    </div>
+</div>
             
             <!-- Section 4: Other Sites -->
             <div class="grid-item" onclick="window.location.href='https://nregastrep.nic.in/netnrega/writereaddata/state_out/jobcardreg_0212026007_eng.html'">
@@ -169,6 +187,46 @@
         localStorage.setItem('language', 'en');
         document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
     }
+// Password Protection for Attendance
+document.getElementById('attendance-section').addEventListener('click', function(e) {
+    // Only trigger if clicking on the container, not the image or text
+    if (e.target === this) {
+        document.getElementById('attendanceModal').style.display = 'block';
+    }
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('attendanceModal').style.display = 'none';
+    document.getElementById('passwordError').style.display = 'none';
+});
+
+document.getElementById('checkPassword').addEventListener('click', function() {
+    const password = document.getElementById('attendancePassword').value;
+    if (password === "Ademma12345?") {
+        window.open('https://mnregaweb4.nic.in/nregaarch/View_NMMS_atten_date_new.aspx?fin_year=2024-2025&Digest=HNrisV4bhHnb7Gve3mAKYQ', '_blank');
+        document.getElementById('attendanceModal').style.display = 'none';
+    } else {
+        const errorElement = document.getElementById('passwordError');
+        errorElement.textContent = document.querySelector('body[data-lang="en"]') ? 'Incorrect password!' :
+                                  document.querySelector('body[data-lang="te"]') ? 'తప్పు పాస్వర్డ్!' :
+                                  'गलत पासवर्ड!';
+        errorElement.style.display = 'block';
+    }
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('attendanceModal')) {
+        document.getElementById('attendanceModal').style.display = 'none';
+        document.getElementById('passwordError').style.display = 'none';
+    }
+});
+
+// Submit with Enter key
+document.getElementById('attendancePassword').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        document.getElementById('checkPassword').click();
+    }        
 });
     </script>
 </body>
