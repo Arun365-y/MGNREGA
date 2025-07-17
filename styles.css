@@ -53,7 +53,7 @@ body.dark-theme {
     color: #383535;
 }
 body.dark-theme .grid-item a {
-    color: #fff;
+    color: white;
      font-weight: 700;
 }
 body.dark-theme .grid-item {
