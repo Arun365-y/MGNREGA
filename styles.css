@@ -52,10 +52,7 @@ body.dark-theme {
     background-color: #121212;
     color: #383535;
 }
-body.dark-theme .grid-item a {
-    color: white;
-     font-weight: 700;
-}
+
 body.dark-theme .grid-item {
     background-color: #1e1e1e;
     border: 1px solid #333;
@@ -328,11 +325,6 @@ body.light-theme .grid-item a {
     color: #2c3e50;
      font-weight: 700;
 }
-.section-container{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
 body.dark-theme .grid-item a {
     color: #f2f6fa;
     font-weight: 700;
@@ -382,11 +374,20 @@ body.dark-theme .grid-item a {
 }
 
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(2, 1fr);
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,auto);
+        gap: 10px;
     }
+    /*}
+    .grid-container {
+        grid-template-columns: repeat(2, 2fr);
+    }
+        */
     
     .main-heading {
         font-size: 2rem;
@@ -394,11 +395,12 @@ body.dark-theme .grid-item a {
 }
 
 @media (max-width: 480px) {
-    .grid-container {
+        .grid-container {
         grid-template-columns:repeat(2,1fr);
         display:grid;
         grid-template-rows:repeat(1,auto);
         gap:10px;
+
     }
     
     .language-selector {
@@ -416,73 +418,4 @@ body.dark-theme .grid-item a {
         margin-top: 20px;
         font-size: 1.8rem;
     }
-    .section-container {
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-        grid-template-rows:repeat(2,auto);
-        gap:10px;
-    }
-    .language-selector {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 5px;
-   }
-    .theme-toggle {
-    position: absolute;
-    top: 0;
-    left: 0;
-   }
-    .main-heading {
-    margin-top: 40px;
-    font-size: 2.5rem;
-   }
-    body.dark-theme .grid-item a {
-    color: #f2f6fa;
-    font-weight: 700;
-   }
-    /* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    border-radius: 5px;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    right: 15px;
-    top: 5px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: black;
-}
-
-.attendancePassword {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
- }
 }
