@@ -348,9 +348,9 @@ body.light-theme .grid-item a {
 
 @media (max-width: 480px) {
     .grid-container {
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:repeat(2,1fr);
         display:grid;
-        grid-template-rows:repeat(2,auto);
+        grid-template-rows:repeat(1,auto);
         gap:10px;
     }
     
