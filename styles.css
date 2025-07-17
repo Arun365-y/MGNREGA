@@ -325,6 +325,11 @@ body.light-theme .grid-item a {
     color: #2c3e50;
      font-weight: 700;
 }
+.section-container{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
 
 
 /* Responsive Design */
@@ -340,7 +345,7 @@ body.light-theme .grid-item a {
 
 @media (max-width: 480px) {
     .grid-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 3fr;
     }
     
     .language-selector {
@@ -358,4 +363,11 @@ body.light-theme .grid-item a {
         margin-top: 20px;
         font-size: 1.8rem;
     }
+    .section-container {
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-template-rows:repeat(2,auto);
+        gap:10px;
+    }
+    
 }
