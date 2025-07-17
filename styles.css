@@ -418,4 +418,22 @@ body.dark-theme .grid-item a {
         margin-top: 20px;
         font-size: 1.8rem;
     }
+    
+.language-selector {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 5px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+    .main-heading {
+    margin-top: 40px;
+    font-size: 2.5rem;
+    }
 }
